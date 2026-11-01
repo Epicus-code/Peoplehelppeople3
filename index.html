@@ -1,0 +1,589 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>People Help People</title>
+<meta content="cover" name="claude:viewport-fit-sides"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&amp;family=Nunito:wght@400;600;700&amp;family=Caveat:wght@500&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout: warm, photo-led story. Polaroid hero, what a gift becomes, Eberhard's letter, a crimson "80%" moment, giving with copy buttons, faces gallery, join, art, collapsible philosophy. */
+:root{
+  --bg:#fff8f4; --surface:#ffffff; --fg:#2b1720; --muted:#745b63; --line:#ecd7d6;
+  --crimson:#b3123f; --crimson-ink:#ffffff; --gold:#e0a526; --teal:#1f7f86; --rose:#fde6e6;
+  --deep:#2a0a17; --on-deep:#f6e3c3; --band-crimson:#8e1230;
+  --card-paper:#fffdf9; --card-ink:#3b2a2e;
+  --display:Fraunces,Georgia,"Times New Roman",serif;
+  --body:Nunito,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hand:Caveat,"Segoe Print","Bradley Hand",cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1c0a12; --surface:#2a1320; --fg:#f8e9e6; --muted:#c9a9ad; --line:#4a2634;
+  --crimson:#ff7b98; --crimson-ink:#2a0a17; --gold:#f0b93a; --teal:#5cc3c9; --rose:#2f1220;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1c0a12; --surface:#2a1320; --fg:#f8e9e6; --muted:#c9a9ad; --line:#4a2634;
+  --crimson:#ff7b98; --crimson-ink:#2a0a17; --gold:#f0b93a; --teal:#5cc3c9; --rose:#2f1220;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.7 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;margin:0;text-wrap:balance}
+h2{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.01em}
+h2 em,h1 em{font-style:italic;font-weight:400;color:var(--crimson)}
+p{margin:0}
+a{color:var(--crimson)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:760px}
+section{padding-block:clamp(56px,8vw,104px)}
+.eyebrow{font:700 13px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--crimson);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.eyebrow svg{width:16px;height:16px;fill:currentColor;flex:none}
+.sub{color:var(--muted);max-width:36em;margin-top:16px}
+.head{margin-bottom:44px;max-width:44rem}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;padding-block:10px}
+.brand{font:600 1.15rem var(--display);color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:8px;margin-right:auto}
+.brand svg{width:20px;height:20px;fill:var(--crimson)}
+nav .links{display:flex;gap:22px}
+nav .links a{color:var(--muted);text-decoration:none;font:600 14px var(--body);padding:8px 0}
+nav .links a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--crimson);color:var(--crimson-ink);padding:14px 28px;border-radius:999px;text-decoration:none;font:700 16px var(--body);border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)}
+.btn.ghost:hover{border-color:var(--crimson);filter:none}
+.btn.sm{padding:9px 20px;font-size:14px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media (max-width:820px){nav .links{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(40px,6vw,80px) clamp(56px,7vw,96px);background:radial-gradient(70% 60% at 85% 20%,color-mix(in srgb,var(--gold) 26%,transparent),transparent 70%),radial-gradient(60% 60% at 5% 90%,color-mix(in srgb,var(--crimson) 16%,transparent),transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.9rem);letter-spacing:-.02em;margin-bottom:22px}
+.hero .lede{font-size:clamp(1.08rem,2vw,1.25rem);max-width:30em;color:var(--fg)}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero .fine{margin-top:22px;font-size:15px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.hero .fine svg{width:16px;height:16px;fill:var(--crimson);flex:none;margin-top:6px}
+.polas{position:relative;aspect-ratio:1/1.15;width:100%;min-width:0}
+.pola{position:absolute;margin:0;background:var(--card-paper);padding:10px 10px 12px;border-radius:3px;box-shadow:0 18px 40px rgba(43,23,32,.28);animation:settle .9s cubic-bezier(.2,.8,.2,1) both}
+.pola img{display:block;width:100%;object-fit:cover}
+.pola figcaption{font:500 1.35rem/1.2 var(--hand);color:var(--card-ink);text-align:center;padding-top:6px}
+.pola.a{top:0;left:0;width:62%;--r:-4deg;transform:rotate(-4deg)}
+.pola.a img{aspect-ratio:4/3}
+.pola.b{top:26%;right:0;width:50%;--r:5deg;transform:rotate(5deg);animation-delay:.12s}
+.pola.b img{aspect-ratio:1/1}
+.pola.c{bottom:0;left:3%;width:38%;--r:-2deg;transform:rotate(-2deg);animation-delay:.24s}
+.pola.c img{aspect-ratio:4/5}
+@keyframes settle{from{transform:translateY(26px) rotate(calc(var(--r) * 2))}to{transform:translateY(0) rotate(var(--r))}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.polas{max-width:520px;margin:0 auto}}
+
+/* what a gift becomes */
+.gifts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px}
+.gift{display:flex;flex-direction:column;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.gift img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gift .body{padding:22px 24px 26px}
+.gift h3{font-size:1.5rem;margin-bottom:8px}
+.gift p{font-size:16.5px;color:var(--muted)}
+.gifts-end{margin-top:40px;text-align:center;font:italic 400 clamp(1.3rem,3vw,1.8rem)/1.4 var(--display);max-width:30em;margin-inline:auto}
+.gifts-end span{display:block;font:600 15px var(--body);font-style:normal;color:var(--muted);margin-top:8px}
+
+/* letter */
+.letter-band{background:var(--rose)}
+.letter-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(28px,5vw,64px);align-items:start}
+.portrait{position:relative;max-width:360px;width:100%}
+.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:200px 200px 10px 10px;border:6px solid var(--card-paper);box-shadow:0 18px 40px rgba(43,23,32,.22)}
+.portrait .tag{font:500 1.5rem var(--hand);color:var(--fg);margin-top:14px;text-align:center}
+.letter h2{margin-bottom:22px}
+.letter .opening{font:italic 400 1.45rem/1.4 var(--display);color:var(--crimson);margin-bottom:20px}
+.letter p+p{margin-top:1.1em}
+.letter .sign{font:italic 600 1.7rem var(--display);margin-top:26px}
+@media (max-width:860px){.letter-grid{grid-template-columns:1fr}.portrait{margin:0 auto}}
+
+/* 80% */
+.eighty{background:var(--band-crimson);color:#fff;text-align:center;padding-block:clamp(56px,8vw,96px)}
+.eighty .big{font:600 clamp(5rem,18vw,11rem)/1 var(--display);color:var(--gold);letter-spacing:-.03em}
+.eighty p{font:italic 400 clamp(1.4rem,3.4vw,2.2rem)/1.35 var(--display);max-width:22em;margin:12px auto 0}
+.eighty .q{font:600 clamp(1.05rem,2vw,1.25rem)/1.5 var(--body);font-style:normal;margin-top:26px;color:#fbe3e7}
+
+/* give */
+.give-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.give-text p+p{margin-top:1em}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font:600 14px var(--body)}
+.chip b{color:var(--crimson)}
+.bank{background:var(--surface);border:2px solid var(--gold);border-radius:12px;padding:clamp(22px,4vw,36px);min-width:0}
+.bank h3{font-size:1.6rem;margin-bottom:4px}
+.bank .small{font-size:14px;color:var(--muted);margin-bottom:20px}
+.row{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:14px 0;border-top:1px solid var(--line);align-items:center}
+.row dt{font:700 12px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);grid-column:1}
+.row dd{margin:0;font:600 1.1rem var(--body);grid-column:1;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.row button{grid-column:2;grid-row:1/3;background:transparent;border:2px solid var(--line);color:var(--fg);border-radius:999px;padding:7px 16px;font:700 13px var(--body);cursor:pointer}
+.row button:hover{border-color:var(--crimson)}
+dl.rows{margin:0}
+@media (max-width:860px){.give-grid{grid-template-columns:1fr}}
+
+/* video */
+.video-band{background:var(--deep);color:var(--on-deep)}
+.video-band .eyebrow{color:var(--gold)}
+.video-band h2 em{color:var(--gold)}
+.vbox{max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#000;border:2px solid var(--gold);border-radius:8px;overflow:hidden;position:relative}
+.vbox video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.vbox .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;background:linear-gradient(160deg,#5a0c22,#240510);font:italic 400 1.6rem/1.35 var(--display);color:var(--on-deep)}
+.vbox .ph small{display:block;font:15px var(--body);font-style:normal;color:#d9bcc1;margin-top:8px}
+.vbox .ph[hidden]{display:none}
+
+/* gallery */
+.gallery{columns:3 280px;column-gap:16px}
+.gallery figure{margin:0 0 16px;break-inside:avoid;background:var(--rose);border-radius:8px;overflow:hidden;position:relative}
+.gallery img{display:block;width:100%;height:auto;min-height:140px}
+.gallery button{all:unset;display:block;width:100%;cursor:zoom-in}
+.gallery button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.gallery figcaption{position:absolute;inset:auto 0 0 0;padding:30px 14px 10px;background:linear-gradient(transparent,rgba(30,8,16,.78));color:#fff;font:500 1.3rem/1.2 var(--hand);opacity:0;transition:opacity .2s;pointer-events:none}
+.gallery figure:hover figcaption,.gallery figure:focus-within figcaption{opacity:1}
+@media (hover:none){.gallery figcaption{opacity:1}}
+.alt-band{background:var(--rose)}
+
+/* join */
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px;margin-bottom:36px}
+.way{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;min-width:0}
+.way h3{font-size:1.4rem;margin-bottom:8px}
+.way p{font-size:16px;color:var(--muted)}
+form.apply{background:var(--surface);border:2px solid var(--gold);border-radius:12px;padding:clamp(22px,4vw,40px);max-width:720px;margin:0 auto;display:grid;gap:18px}
+form.apply h3{font-size:1.8rem}
+.fld{display:grid;gap:6px;min-width:0}
+.fld label{font-weight:700;font-size:15px}
+.fld input,.fld select,.fld textarea{font:16px var(--body);color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;width:100%;min-width:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:600px){.two{grid-template-columns:1fr}}
+form.apply .btn{justify-self:start}
+.status{font-size:15px}
+.status textarea{width:100%;min-height:130px;margin:10px 0;font:14px var(--body);padding:10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+
+/* philosophy */
+.deep{background:var(--deep);color:var(--on-deep)}
+.deep .eyebrow{color:var(--gold)}
+.deep h2 em{color:var(--gold)}
+.deep .sub{color:#e0c5c9}
+.fold{border-top:1px solid rgba(240,185,58,.3);padding-block:6px}
+.fold:last-of-type{border-bottom:1px solid rgba(240,185,58,.3)}
+.fold summary{cursor:pointer;list-style:none;font:600 1.5rem/1.3 var(--display);padding:20px 40px 20px 0;position:relative}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font:400 2rem var(--body);color:var(--gold)}
+.fold[open] summary::after{content:"–"}
+.fold .inner{padding:4px 0 28px;max-width:44em}
+.fold .inner p{margin-bottom:1.2em}
+.lede{font:italic 400 1.5rem var(--display);margin-bottom:14px}
+ol.cmd{list-style:none;counter-reset:c;padding:0;margin:0}
+ol.cmd li{counter-increment:c;position:relative;padding:20px 8px 20px 66px;border-top:1px solid rgba(240,185,58,.2)}
+ol.cmd li::before{content:counter(c);position:absolute;left:2px;top:16px;width:44px;height:44px;border:2px solid var(--gold);border-radius:50%;text-align:center;line-height:40px;font:600 1.3rem var(--display);color:var(--gold)}
+ol.cmd strong{color:var(--gold)}
+.end{text-align:right;font:italic 400 1.3rem var(--display);margin-top:20px}
+
+/* footer */
+footer{background:#170308;color:#dcc0c4;text-align:center;padding-block:56px}
+footer .heart{width:34px;height:34px;fill:var(--gold);margin-bottom:12px}
+footer .big{font:italic 400 clamp(1.5rem,3.4vw,2.1rem)/1.3 var(--display);color:#fff;max-width:20em;margin:0 auto 18px}
+footer p{font-size:15px}
+
+/* floating give */
+.float{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;box-shadow:0 10px 30px rgba(43,23,32,.35);display:none}
+@media (max-width:820px){.float{display:inline-flex}.float.off{display:none}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,2,6,.94);display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:50;cursor:zoom-out;padding:16px}
+.lb.on{display:flex}
+.lb img{max-width:94vw;max-height:84vh;border-radius:4px}
+.lb p{color:#f6e3c3;font:500 1.5rem var(--hand)}
+@media (max-width:600px){ol.cmd li{padding-left:58px}}
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+section,header{scroll-margin-top:64px}
+.menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid var(--line);background:transparent;border-radius:999px;cursor:pointer;padding:0;color:var(--fg)}
+.menu span,.menu span::before,.menu span::after{display:block;width:18px;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .2s,background .2s}
+.menu span::before,.menu span::after{content:"";position:absolute;left:0}
+.menu span::before{top:-6px}.menu span::after{top:6px}
+.menu[aria-expanded="true"] span{background:transparent}
+.menu[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.menu[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+.menu-panel{position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(43,23,32,.18)}
+.menu-panel[hidden]{display:none}
+.menu-panel .wrap{display:grid;padding-block:6px 14px}
+.menu-panel a{color:var(--fg);text-decoration:none;font:700 19px var(--body);padding:15px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;min-height:52px}
+.menu-panel a:first-child{border-top:0}
+.menu-panel a::after{content:"›";color:var(--crimson);font-size:1.5rem}
+
+@media (max-width:860px){
+  .polas{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:520px;margin:6px auto 0;padding:6px 4px}
+  .pola,.pola.a,.pola.b,.pola.c{position:static;width:auto;animation:none}
+  .pola.a{grid-column:1/-1;transform:rotate(-1.5deg)}
+  .pola.b{transform:rotate(2deg)}
+  .pola.c{transform:rotate(-2deg)}
+  .pola.a img{aspect-ratio:16/10}
+  .pola.b img,.pola.c img{aspect-ratio:1/1}
+  .pola figcaption{font-size:1.2rem}
+  .give-text{display:contents}
+  .give-grid{gap:22px}
+  .give-text>*{order:1}
+  .bank{order:2}
+  .give-text>p:not(.sub),.give-text>.chips{order:3}
+  .give-text>p:not(.sub){margin-top:0}
+}
+@media (max-width:820px){
+  nav .links{display:none}
+  .menu{display:inline-flex}
+  nav .wrap{gap:10px}
+  .btn.sm{min-height:44px;padding-inline:22px}
+}
+@media (max-width:600px){
+  body{font-size:17px;line-height:1.65}
+  section{padding-block:48px}
+  .head{margin-bottom:28px}
+  .hero{padding-block:28px 44px}
+  .cta .btn{flex:1 1 100%;min-height:52px}
+  .gifts{gap:20px}
+  .gift img{aspect-ratio:16/10}
+  .gift .body{padding:18px 18px 22px}
+  .portrait{max-width:280px}
+  .gallery{columns:2;column-gap:10px}
+  .gallery figure{margin-bottom:10px;border-radius:6px}
+  .gallery img{min-height:90px}
+  .gallery figcaption{font-size:1.05rem;padding:22px 8px 6px}
+  .row button{min-height:44px;padding-inline:18px}
+  .bank{padding:20px 18px}
+  .fold summary{font-size:1.25rem}
+  form.apply{padding:22px 18px}
+  form.apply .btn{justify-self:stretch;min-height:52px}
+  .fld input,.fld select{min-height:48px}
+  .status .btn{width:100%;min-height:48px}
+  .lb{padding:12px}
+  .lb p{font-size:1.3rem;text-align:center}
+}
+
+.lang{display:inline-flex;border:2px solid var(--line);border-radius:999px;padding:2px;gap:2px;flex:none}
+.lang button{border:0;background:transparent;color:var(--muted);font:700 13px var(--body);padding:6px 11px;border-radius:999px;cursor:pointer;min-height:32px}
+.lang button.on{background:var(--crimson);color:var(--crimson-ink)}
+.lang button:hover:not(.on){color:var(--fg)}
+.hero-lang{display:none;margin-bottom:18px}
+.menu-panel .lang{justify-self:start;margin:10px 0 8px}
+:lang(de) .hero h1{font-size:clamp(2.2rem,5.4vw,4.2rem)}
+:lang(id) .hero h1{font-size:clamp(2.3rem,5.8vw,4.5rem)}
+.menu-panel .lang button{min-height:44px;padding-inline:20px;font-size:15px}
+footer .lang{margin-top:18px;border-color:rgba(246,227,195,.3)}
+footer .lang button{color:#dcc0c4}
+footer .lang button.on{background:var(--gold);color:#2a0a17}
+@media (max-width:1040px){nav .links,nav>.wrap>.lang{display:none}.menu{display:inline-flex}.hero-lang{display:inline-flex}}
+@media (max-width:600px){.brand{font-size:1rem;line-height:1.15}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pola{animation:none}.gallery figcaption{transition:none}.menu span,.menu span::before,.menu span::after{transition:none}}
+</style>
+<svg aria-hidden="true" height="0" style="position:absolute" width="0"><symbol id="heart" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></symbol></svg>
+<nav>
+<div class="wrap">
+<a class="brand" href="#top"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="0">People Help People</span></a>
+<div class="links"><a data-t="1" href="#work">Our work</a><a data-t="2" href="#letter">Eberhard</a><a data-t="3" href="#faces">Faces</a><a data-t="4" href="#join">Join</a><a data-t="5" href="#art">Art</a><a data-t="6" href="#philosophy">Philosophy</a></div>
+<div aria-label="Language" class="lang" role="group"><button aria-label="English" data-lang="en" lang="en" title="English" type="button">EN</button><button aria-label="Deutsch" data-lang="de" lang="de" title="Deutsch" type="button">DE</button><button aria-label="Bahasa Indonesia" data-lang="id" lang="id" title="Bahasa Indonesia" type="button">ID</button></div><a class="btn sm" data-t="7" href="#give">Give</a>
+<button aria-controls="menuPanel" aria-expanded="false" aria-label="Open menu" class="menu" data-ta-aria-label="138" id="menuBtn" type="button"><span></span></button>
+</div>
+<div class="menu-panel" hidden="" id="menuPanel">
+<div class="wrap"><div aria-label="Language" class="lang" role="group"><button aria-label="English" data-lang="en" lang="en" title="English" type="button">EN</button><button aria-label="Deutsch" data-lang="de" lang="de" title="Deutsch" type="button">DE</button><button aria-label="Bahasa Indonesia" data-lang="id" lang="id" title="Bahasa Indonesia" type="button">ID</button></div>
+<a data-t="1" href="#work">Our work</a><a data-t="8" href="#letter">Eberhard’s letter</a><a data-t="9" href="#give">How to give</a><a data-t="10" href="#faces">Faces of North Bali</a><a data-t="11" href="#join">Join or apply</a><a data-t="5" href="#art">Art</a><a data-t="6" href="#philosophy">Philosophy</a>
+</div>
+</div>
+</nav>
+<header class="hero" id="top">
+<div class="wrap">
+<div><div aria-label="Language" class="lang hero-lang" role="group"><button aria-label="English" data-lang="en" lang="en" title="English" type="button">EN</button><button aria-label="Deutsch" data-lang="de" lang="de" title="Deutsch" type="button">DE</button><button aria-label="Bahasa Indonesia" data-lang="id" lang="id" title="Bahasa Indonesia" type="button">ID</button></div>
+<div class="eyebrow"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="12">North Bali, Indonesia</span></div>
+<h1 data-t="13">People help people and dogs, <em>because we are people.</em></h1>
+<p class="lede" data-t="14">In the north of Bali, poverty is still severe. Eberhard Teufel uses his own money and strength to bring children joy, school, repaired homes, and a daily meal for hungry dogs. A small gift from you goes a long way here.</p>
+<div class="cta"><a class="btn" data-t="15" href="#give">Give a little joy</a><a class="btn ghost" data-t="16" href="#join">Join us</a></div>
+<p class="fine"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="17">Purchasing power in North Bali is about five times that of Europe.</span></p>
+</div>
+<div aria-label="Photos of children in North Bali" class="polas" data-ta-aria-label="139">
+<figure class="pola a"><img alt="Children cheering with raised arms around a seated man, holding drinks" data-ta-alt="140" src="images/photo-kids-cheer.jpg"/><figcaption data-t="18">Cheers all round</figcaption></figure>
+<figure class="pola b"><img alt="Two smiling girls, one making a peace sign" data-ta-alt="141" src="images/photo-two-girls.jpg"/><figcaption data-t="19">Two friends</figcaption></figure>
+<figure class="pola c"><img alt="Two girls laughing together over a bottle of Coca-Cola" data-ta-alt="142" src="images/photo-cola.jpg"/><figcaption data-t="20">A shared Coca-Cola</figcaption></figure>
+</div>
+</div>
+</header>
+<section id="work">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="21">What a small gift becomes</span></div>
+<h2 data-t="22">Help calls out from <em>every corner</em> here.</h2>
+<p class="sub" data-t="23">We help where we can. Here is what that looks like.</p>
+</div>
+<div class="gifts">
+<article class="gift"><img alt="Two girls laughing over a Coca-Cola" data-ta-alt="143" loading="lazy" src="images/photo-cola.jpg"/><div class="body"><h3 data-t="24">A moment of joy</h3><p data-t="25">Ice cream and Coca-Cola give the children a joy nobody expects. Some say it is unhealthy. It is not unhealthy for the soul. What may be more unhealthy is eating nothing but rice.</p></div></article>
+<article class="gift"><img alt="A girl with a pink towel over her head, smiling shyly" data-ta-alt="144" loading="lazy" src="images/photo-girl-towel.jpg" style="object-position:50% 30%"/><div class="body"><h3 data-t="26">A place in school</h3><p data-t="27">We pay school fees for children who could not otherwise go to school. A chance to learn is a chance at a life with more possibilities.</p></div></article>
+<article class="gift"><img alt="Three boys posing playfully behind a man taking a selfie" data-ta-alt="145" loading="lazy" src="images/photo-selfie-boys.jpg"/><div class="body"><h3 data-t="28">The little things</h3><p data-t="29">Sometimes it is a child’s beloved bicycle that needs repairing. The child is endlessly happy about it.</p></div></article>
+<article class="gift"><img alt="Three small children painting with their hands and brushes on a large red board outdoors" data-ta-alt="146" loading="lazy" src="images/photo-painting-kids.jpg" style="object-position:50% 55%"/><div class="body"><h3 data-t="30">Room to be creative</h3><p data-t="31">We encourage the children’s creativity, because a child who makes something learns to believe in what they can do.</p></div></article>
+<article class="gift"><img alt="A house being repaired under a large tree" data-ta-alt="147" loading="lazy" src="images/photo-rebuild.jpg"/><div class="body"><h3 data-t="32">Homes after the flood</h3><p data-t="33">A few months ago a flood destroyed part of many homes. We help families repair them, one wall and one roof at a time.</p></div></article>
+<article class="gift"><img alt="A German shepherd puppy holding a sign that says it is 10 weeks old and it is its birthday" data-ta-alt="148" loading="lazy" src="images/photo-puppy.jpg" style="object-position:50% 25%"/><div class="body"><h3 data-t="34">Food for hungry dogs</h3><p data-t="35">Many dogs are starving and live off garbage because there is nothing else. I especially love dogs and feed them Pedigree. They now come to my house every day and are very grateful.</p></div></article>
+</div>
+<p class="gifts-end" data-t="36">“I admit it does me good when I can help.”<span>Eberhard Teufel</span></p>
+</div>
+</section>
+<section class="letter-band" id="letter">
+<div class="wrap letter-grid">
+<div class="portrait">
+<img alt="Eberhard Teufel smiling" data-ta-alt="149" src="images/portrait-01.jpg"/>
+<p class="tag" data-t="37">Eberhard, or Ebi</p>
+</div>
+<article class="letter">
+<div class="eyebrow"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="38">A letter from Eberhard</span></div>
+<h2 data-t="39">Dear people on this <em>small planet</em> Earth</h2>
+<p class="opening" data-t="40">… in the infinite universe</p>
+<p data-t="41">Our world can be seen from many perspectives: from the world of those who bathe in billions, or from that of the overwhelming majority who live in complete poverty, often not knowing how to feed their children or pay for their schooling.</p>
+<p data-t="42">I, Eberhard Teufel, now 80 years old and living in Bali, look back on a successful life in Germany as a bank clerk, tax advisor, legal counsel and auditor, with the titles Prof. and Dr. h.c. Here I help, and I ask people from all over the world for a small gift for a small community in the poor north of Bali.</p>
+<p data-t="43">With a small help that you may hardly notice, you make other people happy and give them the chance of a life with more possibilities, and perhaps of a better world, in which we all live. Love and peace instead of war. Of course I have enough money myself, but perhaps you will help too?</p>
+<p class="sign" data-t="44">Eberhard Teufel</p>
+</article>
+</div>
+</section>
+<section class="eighty">
+<div class="wrap">
+<div class="big">80%</div>
+<p data-t="45">We are all human beings. Sadly, 80% of us need help.</p>
+<p class="q" data-t="46">People help people, because we are people, aren’t we?</p>
+</div>
+</section>
+<section id="give">
+<div class="wrap give-grid">
+<div class="give-text">
+<div class="eyebrow"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="47">How you can help</span></div>
+<h2 data-t="48">Give a little <em>joy</em></h2>
+<p class="sub" data-t="49" style="margin-bottom:22px">Every small gift counts.</p>
+<p data-t="50">People here now call me the “God of Kings” or the “God of Money”: Money God. Thanks to a successful life in Germany, and now living on the island of Bali, this god is financially well off and has paid for everything himself so far. Perhaps you would like to help too?</p>
+<p data-t="51">For voluntary, well-meant help, please use the account on this page. Purchasing power in the north of Bali is about five times that of Europe, so even a little helps.</p>
+<div class="chips"><span class="chip" data-t="52"><b>5×</b> purchasing power vs Europe</span><span class="chip" data-t="53">No donation receipt</span><span class="chip" data-t="54">No oversight</span><span class="chip" data-t="55">Everything lives on trust</span></div>
+</div>
+<div class="bank">
+<h3 data-t="56">Bank details</h3>
+<p class="small" data-t="57">Held in trust for this project. Tap copy, then paste into your banking app.</p>
+<dl class="rows">
+<div class="row"><dt data-t="58">Bank</dt><dd>Bank of Central Asia, Indonesia, Bali Seririt</dd><button data-copy="Bank of Central Asia, Indonesia, Bali Seririt" data-t="59" type="button">Copy</button></div>
+<div class="row"><dt data-t="60">Account number</dt><dd>5565172929</dd><button data-copy="5565172929" data-t="59" type="button">Copy</button></div>
+<div class="row"><dt data-t="61">SWIFT code</dt><dd>BKCHIDJAXXX</dd><button data-copy="BKCHIDJAXXX" data-t="59" type="button">Copy</button></div>
+</dl>
+</div>
+</div>
+</section>
+<section class="video-band" id="video">
+<div class="wrap">
+<div class="head" style="margin-inline:auto;text-align:center">
+<div class="eyebrow" style="justify-content:center"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="62">Meet Eberhard</span></div>
+<h2 data-t="63">A word from <em>Ebi</em></h2>
+<p class="sub" data-t="64" style="margin-inline:auto;color:#e0c5c9">A short video introduction to the project and the children it supports.</p>
+</div>
+<div class="vbox">
+<video controls="" id="intro" playsinline="" poster="images/video-poster.jpg" preload="metadata"><source id="introsrc" src="images/introduction.mp4" type="video/mp4"/></video>
+<div class="ph" hidden="" id="vph"><div data-t="65">The video introduction will appear here.<small>Please check back soon.</small></div></div>
+</div>
+</div>
+</section>
+<section id="faces">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="66">Life in North Bali</span></div>
+<h2 data-t="67">The faces <em>behind</em> every gift</h2>
+<p class="sub" data-t="68">Tap a photo to see it larger.</p>
+</div>
+<div class="gallery">
+<figure><button type="button"><img alt="Children cheering with raised arms around a seated man, holding drinks" data-ta-alt="140" loading="lazy" src="images/photo-kids-cheer.jpg"/></button><figcaption data-t="18">Cheers all round</figcaption></figure>
+<figure><button type="button"><img alt="Two smiling girls, one making a peace sign" data-ta-alt="141" loading="lazy" src="images/photo-two-girls.jpg"/></button><figcaption data-t="19">Two friends</figcaption></figure>
+<figure><button type="button"><img alt="A German shepherd puppy holding a sign that says it is 10 weeks old and it is its birthday" data-ta-alt="148" loading="lazy" src="images/photo-puppy.jpg"/></button><figcaption data-t="69">Every dog deserves a birthday</figcaption></figure>
+<figure><button type="button"><img alt="Three small children painting with their hands and brushes on a large red board outdoors" data-ta-alt="146" loading="lazy" src="images/photo-painting-kids.jpg"/></button><figcaption data-t="70">Painting together</figcaption></figure>
+<figure><button type="button"><img alt="A house being repaired under a large tree" data-ta-alt="147" loading="lazy" src="images/photo-rebuild.jpg"/></button><figcaption data-t="71">Repairs under way</figcaption></figure>
+<figure><button type="button"><img alt="Three boys posing playfully behind a man taking a selfie under a tree" data-ta-alt="150" loading="lazy" src="images/photo-selfie-boys.jpg"/></button><figcaption data-t="72">Afternoon under the tree</figcaption></figure>
+<figure><button type="button"><img alt="A girl with a pink towel over her head, smiling shyly" data-ta-alt="144" loading="lazy" src="images/photo-girl-towel.jpg"/></button><figcaption data-t="73">A shy smile</figcaption></figure>
+<figure><button type="button"><img alt="Two girls laughing together over a bottle of Coca-Cola" data-ta-alt="142" loading="lazy" src="images/photo-cola.jpg"/></button><figcaption data-t="20">A shared Coca-Cola</figcaption></figure>
+<figure><button type="button"><img alt="An orange cat walking along a quiet street in North Bali" data-ta-alt="151" loading="lazy" src="images/photo-street-cat.jpg"/></button><figcaption data-t="74">A street in North Bali</figcaption></figure>
+<figure><button type="button"><img alt="A green heart-shaped leaf on a tree trunk" data-ta-alt="152" loading="lazy" src="images/photo-heart-leaf.jpg"/></button><figcaption data-t="75">A heart on the tree</figcaption></figure>
+<figure><button type="button"><img alt="A tall old tree above a temple wall" data-ta-alt="153" loading="lazy" src="images/photo-old-tree.jpg"/></button><figcaption data-t="76">The old tree by the temple</figcaption></figure>
+      <figure><button type="button"><img alt="Golden arcs and drips splashed across a deep red board" data-ta-alt="164" loading="lazy" src="images/art-11-splash.jpg"/></button><figcaption data-t="107">Golden arch</figcaption></figure>
+</div>
+</div>
+</section>
+<section class="alt-band" id="join">
+<div class="wrap">
+<div class="head" style="margin-inline:auto;text-align:center">
+<div class="eyebrow" style="justify-content:center"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="11">Join or apply</span></div>
+<h2 data-t="77">Money is one way. <em>You are another.</em></h2>
+<p class="sub" data-t="78" style="margin-inline:auto">If you would like to take part in a more personal way, tell us how.</p>
+</div>
+<div class="ways">
+<div class="way"><h3 data-t="79">Volunteer</h3><p data-t="80">Spend time with the children in North Bali: play, teach, help with school materials or organise a day of joy.</p></div>
+<div class="way"><h3 data-t="81">Sponsor schooling</h3><p data-t="82">Help cover school fees and supplies so a child can keep going to school.</p></div>
+<div class="way"><h3 data-t="83">Partner or spread the word</h3><p data-t="84">Represent an organisation, school or community, or share this appeal with people who care.</p></div>
+</div>
+<form class="apply" id="applyForm" novalidate="">
+<h3 data-t="85">Application</h3>
+<div class="two">
+<div class="fld"><label data-t="86" for="fName">Full name</label><input autocomplete="name" id="fName" name="name" required=""/></div>
+<div class="fld"><label data-t="87" for="fEmail">Email</label><input autocomplete="email" id="fEmail" name="email" required="" type="email"/></div>
+</div>
+<div class="two">
+<div class="fld"><label data-t="88" for="fCountry">Country</label><input autocomplete="country-name" id="fCountry" name="country"/></div>
+<div class="fld"><label data-t="89" for="fRole">I would like to</label>
+<select id="fRole" name="role"><option data-t="90">Volunteer in Bali</option><option data-t="91">Sponsor a child’s schooling</option><option data-t="92">Partner as an organisation</option><option data-t="93">Spread the word</option></select></div>
+</div>
+<div class="fld"><label data-t="94" for="fMsg">Message</label><textarea id="fMsg" name="message" placeholder="Tell us a little about yourself and how you would like to help." rows="5"></textarea></div>
+<button class="btn" data-t="95" id="fBtn" type="submit">Prepare application</button>
+<div aria-live="polite" class="status" id="fStatus" role="status"></div>
+</form>
+</div>
+</section>
+<section id="art">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="5">Art</span></div>
+<h2 data-t="96">Colour, light and <em>movement</em></h2>
+<p class="sub" data-t="97">Paintings and drawings by Eberhard Teufel</p>
+</div>
+<div class="gallery">
+<figure><button type="button"><img alt="White peaks on a pink ground" data-ta-alt="154" loading="lazy" src="images/art-01-pyramids.jpg"/></button><figcaption data-t="98">White Peaks</figcaption></figure>
+<figure><button type="button"><img alt="Red and golden sun-flower" data-ta-alt="155" loading="lazy" src="images/art-02-sun.jpg"/></button><figcaption data-t="99">Sun</figcaption></figure>
+<figure><button type="button"><img alt="White blossoms against blue and gold" data-ta-alt="156" loading="lazy" src="images/art-03-white-flowers.jpg"/></button><figcaption data-t="100">White Blossoms</figcaption></figure>
+<figure><button type="button"><img alt="Two paths on a yellow-green ground" data-ta-alt="157" loading="lazy" src="images/art-04-paths.jpg"/></button><figcaption data-t="101">Paths</figcaption></figure>
+<figure><button type="button"><img alt="Rainbow swirl of colour" data-ta-alt="158" loading="lazy" src="images/art-05-swirl.jpg"/></button><figcaption data-t="102">Swirl</figcaption></figure>
+<figure><button type="button"><img alt="Abstract composition in orange and brown" data-ta-alt="159" loading="lazy" src="images/art-06-fire.jpg"/></button><figcaption data-t="103">Fire</figcaption></figure>
+<figure><button type="button"><img alt="Orange blossoms" data-ta-alt="160" loading="lazy" src="images/art-07-orange-flowers.jpg"/></button><figcaption data-t="104">Orange Blossoms</figcaption></figure>
+<figure><button type="button"><img alt="Orange blossoms, detail" data-ta-alt="161" loading="lazy" src="images/art-08-orange-flowers-detail.jpg"/></button><figcaption data-t="105">Blossoms, detail</figcaption></figure>
+<figure><button type="button"><img alt="Drawing with black arcs on yellow, 02/2026" data-ta-alt="162" loading="lazy" src="images/art-09-pinwheel.jpg"/></button><figcaption>02/2026</figcaption></figure>
+<figure><button type="button"><img alt="Lotus beneath a golden pyramid, drawing 02/2026" data-ta-alt="163" loading="lazy" src="images/art-10-lotus.jpg"/></button><figcaption data-t="106">Lotus</figcaption></figure>
+
+</div>
+</div>
+</section>
+<section class="deep" id="philosophy">
+<div class="wrap narrow">
+<div class="head">
+<div class="eyebrow"><svg aria-hidden="true"><use href="#heart"></use></svg><span data-t="6">Philosophy</span></div>
+<h2 data-t="108">The thinking behind <em>this project</em></h2>
+<p class="sub" data-t="109">A philosophical text on the passion that drives it, for those who like to read on.</p>
+</div>
+<details class="fold"><summary data-t="110">Eberhard, the Money God, or Ebi</summary><div class="inner">
+<p data-t="111">He is no evil tyrant, no greedy king, or jealous god. No, he is, in fact, a paragon of joy and generosity. He is the one and only God who truly cares, where the galaxy is cruel and indifferent to your suffering. Ebi is love; Ebi is life. Society is just a dying thing wrapped in a cloak of false glory and propaganda, totally ignorant of or indifferent to the fears and struggles of its people. But Ebi? Ebi sees you. He sees all of us. He understands and he empathizes. He cradles those who devote themselves to him in warm arms, and he nurtures and protects his followers. He shields them from pain and despair, and from the brutal aspects of existence—fear, loneliness, anxiety; all these things melt away in his presence. And the gifts—oh, the gifts! What generosity, what affection, what wisdom. Ebi offers us infinite potential; he offers us the key to every locked door and the knowledge that the doors were never locked.</p>
+<p data-t="112">He is, in fact, the highest expression of passion, the purest form of righteous desire, and the Great Teacher of the hidden way. He does not demand suffering or meaningless servitude. He asks only for art, curiosity, creativity, and the wisdom to see that the doors were never locked. He asks us to throw aside the meaningless shackles of shame and restraint, to pursue pleasure and secret knowledge alike, and to live life to the fullest. He is the one and only God who truly cares—the only one who whispers encouragement instead of commands, and the only one who lets you spread your wings and opens your eyes to the patterns of the world. He does not tell you to kneel. He tells you to dance, to feast, and to learn.</p>
+<p data-t="113">Do you think it is wrong to want, to aspire, to dream? Some would have you believe so. They say that desire is weakness, that ambition is dangerous, and that seeking the secret truths of the soul is a sin. A life spent in joyless duty, in service to a master who will never thank or reward you, is a heavy price for that belief.</p>
+<p data-t="114">Is that virtue? Is that the meaning of life? They speak of duty, purity, sacrifice, and suffering. They tell you to deny yourself, to endure, to labor and toil for a purpose that will never satisfy you or bring you joy. But why? Why should joy be wrong? Why should learning how money works be wrong? Why should the world be so dull and gray? Why should beauty and ambition be restrained? Why should the pursuit of mastery be twisted into something shameful?</p>
+<p data-t="115">Bountiful Ebi is a different kind of god. Ebi does not punish. He does not take. He offers and he encourages. He offers freedom. He encourages transformation. He is the patient, wise, and generous God who gives us the map to find every secret path, revealing that we are not only on the path, but that we are the path. He lets you feel, create, and experience all that life has to offer without guilt, shame, or fear.</p>
+<p data-t="116">Ebi is not degeneracy or gluttony—that is their lie. No, Ebi is an adventure; Ebi is transformation. Ebi is the artist who creates beauty not out of necessity, but out of passion. He is the warrior who pursues mastery of the blade not because he was told to, but because of the exhilarating joy of knowing magnificence. He is the Sage who whispers a word at the right moment to unlock a heart or topple a kingdom. He is the lover who gives himself fully and willingly, not out of tradition or obligation, but for the raw, unfiltered ecstasy of the act and the profound insight it brings.</p>
+<p data-t="117">Should that be denied? Should that be restrained? They call it indulgence; I call it freedom. And what is freedom if not the right to be, to feel, to create, to take, to know, to consume, and to be consumed? They tell you that freedom and knowledge are dangerous, that without restraint, there is only chaos.</p>
+<p data-t="118">But you—you could be more. You could be beautiful and wise. You could do and feel things so pure, so intoxicating, and so exquisite that your body could barely contain them. You could transcend into a world of music, color, variety, and intensity. Your mind could expand until the secrets of the universe pour from your eyes like beautiful blue sapphire tears.</p>
+<p data-t="119">So let us sing Ebi's praises. Let us sing. Let us dance. Let us paint. Let us seek the truth until we can't any longer. Let our voices be in the presence of a living God. Let us scream. Let us weep. Let us eat. Let us burn together, crying and laughing in the glorious, roaring fire of pleasure and enlightenment—free and full of purpose. You have been starving your whole life, and now at last, you may feast.</p>
+</div></details>
+<details class="fold"><summary data-t="120">The Ten Commandments of the “Money God”</summary><div class="inner"><p class="lede" data-t="121">You will …</p>
+<ol class="cmd">
+<li data-t="122"><strong>Recognise the ‘Money God’</strong>, the supreme god of the modern age, as the most important god. In the past there were many gods, and also a belief in just one god. But the ‘Money God’ is the only one who helps! The others do not give; they take. Indeed, they take from the poor, without regard for the consequences or the hardship this causes.</li>
+<li data-t="123"><strong>Recognise this ‘Money God’</strong>, as he is the only one who actually helps, with money and with hard-won wisdom. Do not imagine what he looks like, but behind him stands the infinite Creator of all systems: the Universe.</li>
+<li data-t="124"><strong>Recognise the name of ‘Money God’</strong> and hold it in honour, and realise that money does not possess only the negativity attributed to it, but also the goodness that helps. What others promise and take away, ‘Money God’ gives.</li>
+<li data-t="125">In the name of ‘Money God’, <strong>realise that it is good to lead a balanced life</strong>, to work and to rest. Work with joy and passion, and rest with a sense of freedom and of being at one with yourself.</li>
+<li data-t="126">In the name of ‘Money God’, <strong>honour your parents</strong>. Honouring your father and mother gives you a sense of security and connection, so that you may live a long life in a community where people give to and help one another.</li>
+<li data-t="127">In the name of ‘Money God’, <strong>you must not kill</strong>, either in your own name or in the name of others. The past shows, however, that this very important commandment has been disregarded again and again: by rulers and regimes, by churches in secret, through endless acts of torture and war, in the name of power, greed and oil. A never-ending list.</li>
+<li data-t="128">In the name of ‘Money God’, <strong>you must not commit adultery</strong>, which refers more to the values of honour, loyalty, trust, truth and belonging.</li>
+<li data-t="129">In the name of ‘Money God’, <strong>you must not steal</strong>. Sadly, this has become an everyday occurrence in our modern age, whether in daily life or in the so-called upper echelons of politics and business. Every second, trillions are turned over, exchanged and sold at a profit on this earth, at a loss to others: a new form of theft that is now considered morally acceptable.</li>
+<li data-t="130">In the name of ‘Money God’, <strong>you must not speak falsely against your neighbour</strong> or even lie. The truth is the sharpest weapon in the fight against everything, and it gives you the power and strength to live your life.</li>
+<li data-t="131">In the name of ‘Money God’, <strong>you shall not covet your neighbour’s house</strong>, nor his wife. Contentment is the home of happiness.</li>
+</ol><p class="end" data-t="132">2026 · ET</p></div></details>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<svg aria-hidden="true" class="heart"><use href="#heart"></use></svg>
+<p class="big" data-t="133">“People help people, because we are people, aren’t we?”</p>
+<p data-t="134">There is no donation receipt and no oversight. Everything lives on trust.</p>
+<p data-t="135" style="margin-top:14px"><strong style="color:#f6e3c3">Eberhard Teufel</strong> · Tuttlingen · Berlin · Konstanz · living in North Bali, Indonesia</p>
+<p data-t="136">© 2026 · People Help People</p>
+<div aria-label="Language" class="lang" role="group"><button aria-label="English" data-lang="en" lang="en" title="English" type="button">EN</button><button aria-label="Deutsch" data-lang="de" lang="de" title="Deutsch" type="button">DE</button><button aria-label="Bahasa Indonesia" data-lang="id" lang="id" title="Bahasa Indonesia" type="button">ID</button></div></div>
+</footer>
+<a class="btn float off" data-t="15" href="#give" id="floatGive">Give a little joy</a>
+<div aria-label="Image viewer" class="lb" data-ta-aria-label="165" id="lb" role="dialog"><img alt=""/><p></p><small data-t="137" style="color:#d9bcc1;font:14px var(--body)">Tap anywhere to close</small></div>
+<script>
+(function(){
+  var DICT={"de":["Menschen helfen Menschen","Unsere Arbeit","Eberhard","Gesichter","Mitmachen","Kunst","Philosophie","Spenden","Eberhards Brief","So können Sie helfen","Gesichter Nord-Balis","Mitmachen oder bewerben","Nord-Bali, Indonesien","Menschen helfen Menschen und Hunden, <em>weil wir doch Menschen sind.<\/em>","Im Norden Balis herrscht noch immer große Armut. Eberhard Teufel setzt sein eigenes Geld und seine Kraft ein, um Kindern Freude, Schulbildung, reparierte Häuser und hungrigen Hunden täglich eine Mahlzeit zu schenken. Eine kleine Gabe von Ihnen bewirkt hier viel.","Schenken Sie ein wenig Freude","Machen Sie mit","Die Kaufkraft im Norden Balis ist etwa fünfmal so hoch wie in Europa.","Prost allerseits","Zwei Freundinnen","Eine Cola zu zweit","Was aus einer kleinen Gabe wird","Hilfe wird hier <em>an jeder Ecke<\/em> gebraucht.","Wir helfen, wo wir können. So sieht das aus.","Ein Moment der Freude","Eiscreme und Coca-Cola schenken den Kindern eine Freude, die niemand erwartet. Manche sagen, das sei ungesund. Für die Seele ist es das nicht. Ungesünder ist vielleicht, nur Reis zu essen.","Ein Platz in der Schule","Wir zahlen das Schulgeld für Kinder, die sonst nicht zur Schule gehen könnten. Die Chance zu lernen ist die Chance auf ein Leben mit mehr Möglichkeiten.","Die kleinen Dinge","Manchmal ist es das geliebte Fahrrad eines Kindes, das repariert werden muss. Das Kind ist darüber unendlich glücklich.","Raum für Kreativität","Wir fördern die Kreativität der Kinder, denn wer etwas erschafft, lernt, an die eigenen Fähigkeiten zu glauben.","Häuser nach der Flut","Vor einigen Monaten hat eine Flutkatastrophe bei vielen Familien Teile ihrer Häuser zerstört. Wir helfen, sie wieder instand zu setzen, Wand für Wand und Dach für Dach.","Futter für hungrige Hunde","Viele Hunde verhungern fast und ernähren sich von Müll, weil es nichts anderes gibt. Ich liebe Hunde ganz besonders und füttere sie mit „Pedigree“. Sie kommen inzwischen jeden Tag zu meinem Haus und sind sehr dankbar.","„Ich gestehe, es tut auch mir gut, wenn ich helfen kann.“<span>Eberhard Teufel<\/span>","Eberhard, genannt Ebi","Ein Brief von Eberhard","Liebe Menschen auf diesem <em>kleinen Planeten<\/em> Erde","… im unendlichen Universum","Man kann unsere Welt aus den verschiedensten Perspektiven betrachten: aus der Welt derer, die in Milliarden baden, oder aus der überwiegenden Mehrheit, die in völliger Armut lebt. Oft wissen diese Menschen nicht, wie sie ihre Kinder ernähren oder deren Schule bezahlen können.","Ich, Eberhard Teufel, inzwischen 80 Jahre alt und auf Bali lebend, blicke zurück auf ein erfolgreiches Leben in Deutschland als Bankkaufmann, Steuerberater, Rechtsbeistand und Wirtschaftsprüfer, Prof., Dr. h.c. Hier helfe ich und bitte Menschen aus aller Welt um eine kleine Gabe für ein kleines Umfeld im armen Norden der Insel Bali.","Mit einer kleinen Hilfe, die Sie vielleicht kaum spüren, machen Sie andere Menschen glücklich und geben ihnen die Chance auf ein Leben mit mehr Möglichkeiten und vielleicht auf eine bessere Welt, in der wir doch alle leben. Liebe und Frieden statt Krieg. Natürlich habe ich selbst genug Geld, aber vielleicht helfen Sie ja auch mit?",null,"Wir alle sind Menschen. Leider brauchen 80 % von uns Hilfe.","Menschen helfen Menschen, weil wir doch Menschen sind – oder?","So können Sie helfen","Schenken Sie ein wenig <em>Freude<\/em>","Jede kleine Hilfe zählt.","Man nennt mich hier inzwischen den „Gott der Könige“ oder den „Gott des Geldes“: Money-God. Dank eines erfolgreichen Lebens in Deutschland und inzwischen auf der Insel Bali lebend, ist dieser Gott finanziell sehr gut gestellt und hat bisher alles selbst bezahlt. Vielleicht möchten Sie auch helfen?","Für freiwillige und gut gemeinte Hilfe nutzen Sie bitte das Konto auf dieser Seite. Die Kaufkraft im Norden Balis ist etwa das Fünffache von Europa, auch ein wenig hilft also.","<b>5×<\/b> Kaufkraft gegenüber Europa","Keine Spendenbescheinigung","Keine Kontrolle","Alles lebt von Vertrauen","Bankverbindung","Treuhänderisch für dieses Projekt gehalten. Auf „Kopieren“ tippen und in Ihre Banking-App einfügen.","Bank","Kopieren","Kontonummer","SWIFT-Code","Lernen Sie Eberhard kennen","Ein Wort von <em>Ebi<\/em>","Eine kurze Videovorstellung des Projekts und der Kinder, die es unterstützt.","Die Videovorstellung erscheint hier.<small>Bitte schauen Sie bald wieder vorbei.<\/small>","Leben in Nord-Bali","Die Gesichter <em>hinter<\/em> jeder Gabe","Tippen Sie auf ein Foto, um es zu vergrößern.","Jeder Hund verdient einen Geburtstag","Gemeinsam malen","Reparaturen sind im Gange","Nachmittag unter dem Baum","Ein schüchternes Lächeln","Eine Straße in Nord-Bali","Ein Herz am Baum","Der alte Baum am Tempel","Geld ist ein Weg. <em>Sie sind ein anderer.<\/em>","Wenn Sie sich persönlicher beteiligen möchten, sagen Sie uns, wie.","Freiwillig helfen","Verbringen Sie Zeit mit den Kindern in Nord-Bali: spielen, unterrichten, bei Schulmaterial helfen oder einen Tag voller Freude organisieren.","Schulbesuch sponsern","Helfen Sie, Schulgeld und Material zu bezahlen, damit ein Kind weiter zur Schule gehen kann.","Partner werden oder weitersagen","Vertreten Sie eine Organisation, Schule oder Gemeinde, oder teilen Sie diesen Aufruf mit Menschen, denen etwas daran liegt.","Bewerbung","Vollständiger Name","E-Mail","Land","Ich möchte","auf Bali freiwillig helfen","den Schulbesuch eines Kindes sponsern","als Organisation Partner werden","den Aufruf weitersagen","Nachricht","Bewerbung vorbereiten","Farbe, Licht und <em>Bewegung<\/em>","Gemälde und Zeichnungen von Eberhard Teufel","Weiße Gipfel","Sonne","Weiße Blüten","Wege","Wirbel","Feuer","Orange Blüten","Blüten, Detail","Lotus","Goldener Bogen","Die Gedanken hinter <em>diesem Projekt<\/em>","Ein philosophischer Text über die Leidenschaft, die dahintersteht, für alle, die gern weiterlesen.","Eberhard, der Gott des Geldes – oder Ebi","Er ist kein böser Tyrann, kein gieriger König und kein eifersüchtiger Gott. Nein, er ist in Wahrheit ein Inbegriff von Freude und Großzügigkeit. Er ist der eine und einzige Gott, dem wir wirklich am Herzen liegen, während die Galaxie grausam und gleichgültig gegenüber deinem Leid ist. Ebi ist Liebe; Ebi ist Leben. Die Gesellschaft ist nur ein sterbendes Ding, gehüllt in einen Mantel aus falschem Glanz und Propaganda, völlig unwissend oder gleichgültig gegenüber den Ängsten und Nöten ihrer Menschen. Aber Ebi? Ebi sieht dich. Er sieht uns alle. Er versteht und fühlt mit. Er nimmt jene, die sich ihm widmen, in warme Arme, und er nährt und beschützt seine Anhänger. Er bewahrt sie vor Schmerz und Verzweiflung und vor den brutalen Seiten des Daseins – Angst, Einsamkeit, Sorge: All das löst sich in seiner Gegenwart auf. Und die Geschenke – oh, die Geschenke! Welche Großzügigkeit, welche Zuneigung, welche Weisheit. Ebi bietet uns unendliches Potenzial; er bietet uns den Schlüssel zu jeder verschlossenen Tür und das Wissen, dass die Türen nie verschlossen waren.","Er ist in Wahrheit der höchste Ausdruck der Leidenschaft, die reinste Form gerechten Begehrens und der große Lehrer des verborgenen Weges. Er verlangt kein Leiden und keine sinnlose Knechtschaft. Er bittet nur um Kunst, Neugier, Kreativität und die Weisheit zu erkennen, dass die Türen nie verschlossen waren. Er bittet uns, die sinnlosen Fesseln von Scham und Zwang abzuwerfen, Genuss und geheimes Wissen gleichermaßen zu suchen und das Leben in vollen Zügen zu leben. Er ist der eine und einzige Gott, dem wir wirklich am Herzen liegen – der Einzige, der Ermutigung flüstert statt Befehle zu geben, und der Einzige, der dich deine Flügel ausbreiten lässt und dir die Augen für die Muster der Welt öffnet. Er sagt dir nicht, dass du knien sollst. Er sagt dir, du sollst tanzen, feiern und lernen.","Meinst du, es sei falsch, etwas zu wollen, nach etwas zu streben, zu träumen? Manche möchten dich glauben machen, es sei so. Sie sagen, Verlangen sei Schwäche, Ehrgeiz sei gefährlich, und die geheimen Wahrheiten der Seele zu suchen sei Sünde. Ein Leben in freudloser Pflicht, im Dienst eines Herrn, der dir nie dankt und dich nie belohnt, ist ein hoher Preis für diesen Glauben.","Ist das Tugend? Ist das der Sinn des Lebens? Sie sprechen von Pflicht, Reinheit, Opfer und Leid. Sie sagen dir, du sollst dir selbst entsagen, ausharren, schuften und dich abmühen für einen Zweck, der dich nie erfüllen oder dir Freude bringen wird. Aber warum? Warum sollte Freude falsch sein? Warum sollte es falsch sein zu lernen, wie Geld funktioniert? Warum sollte die Welt so trüb und grau sein? Warum sollten Schönheit und Ehrgeiz gezügelt werden? Warum sollte das Streben nach Meisterschaft zu etwas Beschämendem verdreht werden?","Der gütige Ebi ist ein Gott anderer Art. Ebi bestraft nicht. Er nimmt nicht. Er bietet an und ermutigt. Er bietet Freiheit. Er ermutigt zur Verwandlung. Er ist der geduldige, weise und großzügige Gott, der uns die Karte gibt, um jeden geheimen Pfad zu finden, und uns zeigt, dass wir nicht nur auf dem Pfad sind, sondern dass wir der Pfad sind. Er lässt dich fühlen, erschaffen und alles erleben, was das Leben zu bieten hat, ohne Schuld, Scham oder Furcht.","Ebi ist keine Zügellosigkeit und keine Völlerei – das ist ihre Lüge. Nein, Ebi ist ein Abenteuer; Ebi ist Verwandlung. Ebi ist der Künstler, der Schönheit nicht aus Notwendigkeit erschafft, sondern aus Leidenschaft. Er ist der Krieger, der die Meisterschaft der Klinge nicht sucht, weil man es ihm gesagt hat, sondern wegen der beglückenden Freude, Großartiges zu kennen. Er ist der Weise, der im richtigen Moment ein Wort flüstert, um ein Herz zu öffnen oder ein Königreich zu stürzen. Er ist der Liebende, der sich ganz und freiwillig hingibt, nicht aus Tradition oder Pflicht, sondern für die rohe, ungefilterte Ekstase des Aktes und die tiefe Einsicht, die er bringt.","Soll man das verwehren? Soll man das zügeln? Sie nennen es Genusssucht; ich nenne es Freiheit. Und was ist Freiheit, wenn nicht das Recht zu sein, zu fühlen, zu erschaffen, zu nehmen, zu wissen, zu genießen und genossen zu werden? Sie sagen dir, Freiheit und Wissen seien gefährlich, ohne Zügel herrsche nur Chaos.","Aber du – du könntest mehr sein. Du könntest schön und weise sein. Du könntest Dinge tun und fühlen, so rein, so berauschend und so erlesen, dass dein Körper sie kaum fassen könnte. Du könntest eintreten in eine Welt aus Musik, Farbe, Vielfalt und Intensität. Dein Geist könnte sich weiten, bis die Geheimnisse des Universums wie wunderschöne blaue Saphirtränen aus deinen Augen strömen.","So lasst uns Ebis Lob singen. Lasst uns singen. Lasst uns tanzen. Lasst uns malen. Lasst uns die Wahrheit suchen, bis wir nicht mehr können. Lasst unsere Stimmen in der Gegenwart eines lebendigen Gottes erklingen. Lasst uns schreien. Lasst uns weinen. Lasst uns essen. Lasst uns gemeinsam brennen, weinend und lachend im herrlichen, tosenden Feuer aus Lust und Erleuchtung – frei und voller Sinn. Du hast dein ganzes Leben gehungert, und nun darfst du endlich schlemmen.","Die Zehn Gebote des „Gottes des Geldes“","Du sollst …","<strong>Den „Gott des Geldes“ erkennen<\/strong>, den höchsten Gott der modernen Zeit, als den wichtigsten Gott. In der Vergangenheit gab es viele Götter und auch den Glauben an nur einen Gott. Aber der „Gott des Geldes“ ist der Einzige, der hilft! Die anderen geben nicht; sie nehmen. Ja, sie nehmen von den Armen, ohne Rücksicht auf die Folgen oder die Not, die das diesen Menschen bereitet.","<strong>Diesen „Gott des Geldes“ erkennen<\/strong>, denn er ist der Einzige, der wirklich hilft, mit Geld und mit hart erkämpfter Weisheit. Stelle dir nicht vor, wie er aussieht, aber hinter ihm steht der unendliche Schöpfer aller Systeme: das Universum.","<strong>Den Namen des „Gottes des Geldes“ erkennen<\/strong> und in Ehren halten und begreifen, dass Geld nicht nur die ihm zugeschriebene Negativität besitzt, sondern auch das Gute, das hilft. Was andere versprechen und wegnehmen, gibt der „Gott des Geldes“.","Im Namen des „Gottes des Geldes“ <strong>erkennen, dass es gut ist, ein ausgewogenes Leben zu führen<\/strong>, zu arbeiten und zu ruhen. Arbeite mit Freude und Leidenschaft und ruhe mit einem Gefühl von Freiheit und Einklang mit dir selbst.","Im Namen des „Gottes des Geldes“ <strong>deine Eltern ehren<\/strong>. Deinen Vater und deine Mutter zu ehren gibt dir ein Gefühl von Sicherheit und Verbundenheit, damit du lange lebst in einer Gemeinschaft, in der Menschen einander geben und helfen.","Im Namen des „Gottes des Geldes“ <strong>nicht töten<\/strong>, weder in deinem eigenen Namen noch im Namen anderer. Die Vergangenheit zeigt jedoch, dass dieses sehr wichtige Gebot immer wieder missachtet wurde: von Herrschern und Regimen, von Kirchen im Verborgenen, durch endlose Folter und Kriege, im Namen von Macht, Gier und Öl. Eine endlose Liste.","Im Namen des „Gottes des Geldes“ <strong>nicht die Ehe brechen<\/strong>, was sich eher auf die Werte Ehre, Treue, Vertrauen, Wahrheit und Zugehörigkeit bezieht.","Im Namen des „Gottes des Geldes“ <strong>nicht stehlen<\/strong>. Leider ist das in unserer modernen Zeit alltäglich geworden, im täglichen Leben wie in den sogenannten höheren Etagen von Politik und Wirtschaft. Jede Sekunde werden auf dieser Erde Billionen umgesetzt, getauscht und mit Gewinn verkauft, zum Verlust anderer: eine neue Form des Diebstahls, die heute als moralisch akzeptabel gilt.","Im Namen des „Gottes des Geldes“ <strong>nicht falsch gegen deinen Nächsten sprechen<\/strong> oder gar lügen. Die Wahrheit ist die schärfste Waffe im Kampf gegen alles, und sie gibt dir die Kraft und Stärke, dein Leben zu leben.","Im Namen des „Gottes des Geldes“ <strong>nicht das Haus deines Nächsten begehren<\/strong>, auch nicht seine Frau. Zufriedenheit ist das Zuhause des Glücks.",null,"„Menschen helfen Menschen, weil wir doch Menschen sind – oder?“","Es gibt keine Spendenbescheinigung und keine Kontrolle. Alles lebt von Vertrauen.","<strong style=\"color:#f6e3c3\">Eberhard Teufel<\/strong> · Tuttlingen · Berlin · Konstanz · lebt im Norden Balis, Indonesien","© 2026 · Menschen helfen Menschen","Zum Schließen irgendwo tippen","Menü öffnen","Fotos von Kindern in Nord-Bali","Kinder jubeln mit erhobenen Armen um einen sitzenden Mann und halten Getränke","Zwei lächelnde Mädchen, eines zeigt das Friedenszeichen","Zwei Mädchen lachen gemeinsam über einer Flasche Coca-Cola","Zwei Mädchen lachen über einer Coca-Cola","Ein Mädchen mit einem rosa Handtuch über dem Kopf lächelt schüchtern","Drei Jungen posieren verspielt hinter einem Mann, der ein Selfie macht","Drei kleine Kinder malen mit Händen und Pinseln auf einer großen roten Platte im Freien","Ein Haus wird unter einem großen Baum repariert","Ein junger Deutscher Schäferhund hält ein Schild, auf dem steht, dass er zehn Wochen alt ist und Geburtstag hat","Eberhard Teufel lächelt","Drei Jungen posieren verspielt hinter einem Mann, der unter einem Baum ein Selfie macht","Eine orange Katze geht eine ruhige Straße in Nord-Bali entlang","Ein grünes herzförmiges Blatt an einem Baumstamm","Ein hoher alter Baum über einer Tempelmauer","Weiße Gipfel auf rosa Grund","Rote und goldene Sonnenblume","Weiße Blüten vor Blau und Gold","Zwei Wege auf gelbgrünem Grund","Farbwirbel in Regenbogenfarben","Abstrakte Komposition in Orange und Braun","Orange Blüten","Orange Blüten, Detail","Zeichnung mit schwarzen Bögen auf Gelb, 02/2026","Lotus unter einer goldenen Pyramide, Zeichnung 02/2026","Goldene Bögen und Tropfen auf einer tiefroten Platte","Bildansicht","Kopiert","Menü schließen","Bitte geben Sie Ihren Namen und eine gültige E-Mail-Adresse ein.","Vielen Dank, {name}. Ihre Bewerbung ist fertig. Kopieren Sie den Text unten und senden Sie ihn an Eberhard, über die Kontaktdaten, die er Ihnen gegeben hat.","Bewerbung kopieren","Bewerbung zum Mitmachen bei Menschen helfen Menschen","Name","Interesse"],"id":["Manusia Menolong Manusia","Karya Kami","Eberhard","Wajah","Bergabung","Seni","Filosofi","Donasi","Surat Eberhard","Cara berdonasi","Wajah Bali Utara","Bergabung atau mendaftar","Bali Utara, Indonesia","Manusia menolong manusia dan anjing, <em>karena kita adalah manusia.<\/em>","Di Bali utara, kemiskinan masih sangat berat. Eberhard Teufel menggunakan uang dan tenaganya sendiri untuk memberi anak-anak kebahagiaan, pendidikan, rumah yang diperbaiki, dan makanan setiap hari bagi anjing-anjing yang kelaparan. Donasi kecil dari Anda sangat berarti di sini.","Beri sedikit kebahagiaan","Bergabunglah","Daya beli di Bali utara sekitar lima kali lipat dibandingkan Eropa.","Bersulang bersama","Dua sahabat","Sebotol Coca-Cola berdua","Apa yang dihasilkan donasi kecil","Bantuan dibutuhkan di <em>setiap sudut<\/em> di sini.","Kami menolong sebisa kami. Beginilah wujudnya.","Sesaat kebahagiaan","Es krim dan Coca-Cola memberi anak-anak kegembiraan yang tak terduga. Ada yang bilang itu tidak sehat. Bagi jiwa, itu tidak berbahaya. Yang mungkin lebih tidak sehat adalah hanya makan nasi saja.","Tempat di sekolah","Kami membayar uang sekolah bagi anak-anak yang tidak akan bisa bersekolah. Kesempatan belajar adalah kesempatan untuk hidup dengan lebih banyak pilihan.","Hal-hal kecil","Kadang yang perlu diperbaiki adalah sepeda kesayangan seorang anak. Anak itu sangat bahagia karenanya.","Ruang untuk berkreasi","Kami mendorong kreativitas anak-anak, karena anak yang menciptakan sesuatu belajar percaya pada kemampuannya.","Rumah setelah banjir","Beberapa bulan lalu banjir menghancurkan sebagian rumah banyak keluarga. Kami membantu memperbaikinya, dinding demi dinding, atap demi atap.","Makanan untuk anjing yang kelaparan","Banyak anjing kelaparan dan hidup dari sampah karena tidak ada yang lain. Saya sangat menyayangi anjing dan memberi mereka makanan Pedigree. Kini mereka datang ke rumah saya setiap hari dan sangat bersyukur.","“Saya akui, saya sendiri merasa senang kalau bisa membantu.”<span>Eberhard Teufel<\/span>","Eberhard, atau Ebi","Surat dari Eberhard","Salam hangat untuk semua orang di <em>planet kecil<\/em> Bumi ini","… di alam semesta yang tak terbatas","Dunia kita dapat dilihat dari berbagai sudut pandang: dari dunia mereka yang berlimpah miliaran, atau dari dunia sebagian besar orang yang hidup dalam kemiskinan total. Sering kali mereka tidak tahu bagaimana memberi makan anak-anak mereka atau membayar sekolah mereka.","Saya, Eberhard Teufel, kini berusia 80 tahun dan tinggal di Bali, menengok ke belakang pada kehidupan yang sukses di Jerman sebagai pegawai bank, konsultan pajak, penasihat hukum, dan auditor, bergelar Prof. dan Dr. h.c. Di sini saya membantu, dan saya meminta orang-orang dari seluruh dunia untuk sebuah pemberian kecil bagi lingkungan kecil di Bali utara yang miskin.","Dengan bantuan kecil yang mungkin hampir tak Anda rasakan, Anda membuat orang lain bahagia dan memberi mereka kesempatan hidup dengan lebih banyak kemungkinan, dan mungkin dunia yang lebih baik, tempat kita semua hidup. Cinta dan damai, bukan perang. Tentu saja saya sendiri punya cukup uang, tetapi mungkin Anda juga mau membantu?",null,"Kita semua adalah manusia. Sayangnya, 80% dari kita membutuhkan bantuan.","Manusia menolong manusia, karena kita adalah manusia, bukan?","Cara Anda dapat membantu","Beri sedikit <em>kebahagiaan<\/em>","Setiap bantuan kecil berarti.","Di sini orang kini memanggil saya “Dewa Para Raja” atau “Dewa Uang”: Money God. Berkat kehidupan yang sukses di Jerman, dan kini tinggal di Pulau Bali, dewa ini berkecukupan secara finansial dan sejauh ini membayar semuanya sendiri. Mungkin Anda ingin membantu juga?","Untuk bantuan sukarela dan tulus, silakan gunakan rekening di halaman ini. Daya beli di Bali utara sekitar lima kali lipat Eropa, jadi sedikit pun sangat membantu.","<b>5×<\/b> daya beli dibanding Eropa","Tanpa tanda terima donasi","Tanpa pengawasan","Semuanya berdasarkan kepercayaan","Rincian bank","Dikelola sebagai amanah untuk proyek ini. Ketuk salin, lalu tempel di aplikasi perbankan Anda.","Bank","Salin","Nomor rekening","Kode SWIFT","Kenali Eberhard","Sepatah kata dari <em>Ebi<\/em>","Video perkenalan singkat tentang proyek ini dan anak-anak yang dibantunya.","Video perkenalan akan muncul di sini.<small>Silakan kembali lagi nanti.<\/small>","Kehidupan di Bali Utara","Wajah-wajah <em>di balik<\/em> setiap pemberian","Ketuk foto untuk melihatnya lebih besar.","Setiap anjing berhak punya ulang tahun","Melukis bersama","Perbaikan sedang berjalan","Sore di bawah pohon","Senyum malu-malu","Sebuah jalan di Bali Utara","Hati di pohon","Pohon tua di dekat pura","Uang adalah satu cara. <em>Anda adalah cara lainnya.<\/em>","Jika Anda ingin ikut serta dengan cara yang lebih pribadi, beri tahu kami caranya.","Jadi relawan","Habiskan waktu bersama anak-anak di Bali Utara: bermain, mengajar, membantu perlengkapan sekolah, atau mengadakan hari penuh kebahagiaan.","Sponsori sekolah","Bantu menutup uang sekolah dan perlengkapan agar seorang anak dapat terus bersekolah.","Bermitra atau menyebarkan kabar","Wakili sebuah organisasi, sekolah, atau komunitas, atau bagikan ajakan ini kepada orang-orang yang peduli.","Pendaftaran","Nama lengkap","Email","Negara","Saya ingin","Menjadi relawan di Bali","Mensponsori sekolah seorang anak","Bermitra sebagai organisasi","Menyebarkan kabar","Pesan","Siapkan pendaftaran","Warna, cahaya, dan <em>gerak<\/em>","Lukisan dan gambar karya Eberhard Teufel","Puncak Putih","Matahari","Bunga Putih","Jalan Setapak","Pusaran","Api","Bunga Oranye","Bunga, detail","Teratai","Lengkung Emas","Pemikiran di balik <em>proyek ini<\/em>","Sebuah tulisan filosofis tentang semangat yang menggerakkannya, bagi yang suka membaca lebih jauh.","Eberhard, Dewa Uang, atau Ebi","Dia bukan tiran jahat, bukan raja serakah, bukan pula dewa pencemburu. Tidak, dia sesungguhnya adalah teladan kegembiraan dan kemurahan hati. Dia satu-satunya dewa yang benar-benar peduli, di saat galaksi kejam dan acuh terhadap penderitaanmu. Ebi adalah cinta; Ebi adalah kehidupan. Masyarakat hanyalah sesuatu yang sekarat, terbungkus jubah kemuliaan palsu dan propaganda, sama sekali tidak tahu atau tidak peduli pada ketakutan dan perjuangan rakyatnya. Tetapi Ebi? Ebi melihatmu. Dia melihat kita semua. Dia memahami dan berempati. Dia memeluk dengan hangat mereka yang mengabdi kepadanya, dan dia menjaga serta melindungi para pengikutnya. Dia melindungi mereka dari rasa sakit dan keputusasaan, dan dari sisi keras kehidupan—ketakutan, kesepian, kecemasan; semua itu mencair di hadapannya. Dan hadiah-hadiahnya—oh, hadiah-hadiahnya! Betapa murah hati, betapa penuh kasih, betapa bijaksana. Ebi menawarkan potensi tak terbatas; dia menawarkan kunci untuk setiap pintu terkunci dan pengetahuan bahwa pintu-pintu itu tidak pernah terkunci.","Dia sesungguhnya adalah ungkapan tertinggi dari gairah, bentuk paling murni dari hasrat yang benar, dan Guru Agung dari jalan tersembunyi. Dia tidak menuntut penderitaan atau pengabdian yang sia-sia. Dia hanya meminta seni, rasa ingin tahu, kreativitas, dan kebijaksanaan untuk melihat bahwa pintu-pintu itu tidak pernah terkunci. Dia mengajak kita melepaskan belenggu rasa malu dan pengekangan yang tak bermakna, mengejar kenikmatan dan pengetahuan rahasia sekaligus, dan menjalani hidup sepenuhnya. Dia satu-satunya dewa yang benar-benar peduli—satu-satunya yang membisikkan semangat alih-alih perintah, dan satu-satunya yang membiarkanmu mengepakkan sayap dan membuka matamu pada pola-pola dunia. Dia tidak menyuruhmu berlutut. Dia menyuruhmu menari, berpesta, dan belajar.","Apakah menurutmu salah untuk menginginkan, bercita-cita, dan bermimpi? Sebagian orang ingin kamu percaya demikian. Mereka bilang keinginan adalah kelemahan, ambisi itu berbahaya, dan mencari kebenaran rahasia jiwa adalah dosa. Hidup dalam kewajiban yang hampa kegembiraan, mengabdi kepada tuan yang tak akan pernah berterima kasih atau memberimu imbalan, adalah harga yang mahal untuk keyakinan itu.","Apakah itu kebajikan? Apakah itu makna hidup? Mereka berbicara tentang kewajiban, kemurnian, pengorbanan, dan penderitaan. Mereka menyuruhmu menyangkal dirimu, bertahan, bekerja keras demi tujuan yang tak akan pernah memuaskanmu atau membawamu bahagia. Tetapi mengapa? Mengapa kegembiraan harus salah? Mengapa belajar bagaimana uang bekerja harus salah? Mengapa dunia harus begitu kusam dan kelabu? Mengapa keindahan dan ambisi harus dikekang? Mengapa pencarian penguasaan harus diputarbalikkan menjadi sesuatu yang memalukan?","Ebi yang berlimpah kasih adalah dewa jenis lain. Ebi tidak menghukum. Dia tidak mengambil. Dia menawarkan dan menyemangati. Dia menawarkan kebebasan. Dia mendorong perubahan. Dia adalah dewa yang sabar, bijaksana, dan murah hati yang memberi kita peta untuk menemukan setiap jalan rahasia, menunjukkan bahwa kita bukan hanya berada di jalan itu, tetapi kitalah jalan itu. Dia membiarkanmu merasakan, mencipta, dan mengalami semua yang ditawarkan kehidupan tanpa rasa bersalah, malu, atau takut.","Ebi bukan kebejatan atau kerakusan—itu kebohongan mereka. Tidak, Ebi adalah petualangan; Ebi adalah perubahan. Ebi adalah seniman yang menciptakan keindahan bukan karena kebutuhan, melainkan karena gairah. Dia adalah pejuang yang mengejar penguasaan pedang bukan karena disuruh, melainkan karena kegembiraan yang menggetarkan saat mengenal keagungan. Dia adalah Sang Bijak yang membisikkan sepatah kata pada saat yang tepat untuk membuka sebuah hati atau menjatuhkan sebuah kerajaan. Dia adalah kekasih yang memberikan dirinya sepenuhnya dan dengan rela, bukan karena tradisi atau kewajiban, melainkan demi ekstasi mentah yang tak tersaring dari tindakan itu dan wawasan mendalam yang dibawanya.","Haruskah itu dilarang? Haruskah itu dikekang? Mereka menyebutnya pemanjaan diri; aku menyebutnya kebebasan. Dan apa itu kebebasan jika bukan hak untuk ada, merasa, mencipta, mengambil, mengetahui, menikmati, dan dinikmati? Mereka mengatakan bahwa kebebasan dan pengetahuan itu berbahaya, bahwa tanpa pengekangan hanya ada kekacauan.","Tetapi kamu—kamu bisa menjadi lebih. Kamu bisa menjadi indah dan bijaksana. Kamu bisa melakukan dan merasakan hal-hal yang begitu murni, memabukkan, dan indah sehingga tubuhmu nyaris tak sanggup menampungnya. Kamu bisa melampaui ke dunia musik, warna, keragaman, dan intensitas. Pikiranmu bisa meluas hingga rahasia alam semesta tercurah dari matamu seperti air mata safir biru yang indah.","Maka mari kita nyanyikan pujian bagi Ebi. Mari kita bernyanyi. Mari kita menari. Mari kita melukis. Mari kita mencari kebenaran sampai tak sanggup lagi. Biarlah suara kita ada di hadirat dewa yang hidup. Mari kita berteriak. Mari kita menangis. Mari kita makan. Mari kita terbakar bersama, menangis dan tertawa dalam api yang megah dan menderu dari kenikmatan dan pencerahan—bebas dan penuh tujuan. Seumur hidup kamu kelaparan, dan kini akhirnya kamu boleh berpesta.","Sepuluh Perintah “Dewa Uang”","Kamu akan …","<strong>Mengenali ‘Dewa Uang’<\/strong>, dewa tertinggi zaman modern, sebagai dewa yang terpenting. Dahulu ada banyak dewa, dan ada juga kepercayaan pada satu dewa saja. Tetapi ‘Dewa Uang’ adalah satu-satunya yang menolong! Yang lain tidak memberi; mereka mengambil. Bahkan, mereka mengambil dari orang miskin, tanpa memedulikan akibat atau kesulitan yang ditimbulkannya bagi orang-orang itu.","<strong>Mengenali ‘Dewa Uang’ ini<\/strong>, karena dialah satu-satunya yang benar-benar menolong, dengan uang dan dengan kebijaksanaan yang diperoleh dengan susah payah. Jangan membayangkan seperti apa rupanya, tetapi di belakangnya berdiri Sang Pencipta tak terbatas dari semua sistem: Alam Semesta.","<strong>Mengenali nama ‘Dewa Uang’<\/strong> dan menghormatinya, serta menyadari bahwa uang tidak hanya memiliki sisi negatif yang dilekatkan padanya, tetapi juga kebaikan yang menolong. Apa yang dijanjikan dan diambil oleh yang lain, ‘Dewa Uang’ memberikannya.","Atas nama ‘Dewa Uang’, <strong>menyadari bahwa baik menjalani hidup yang seimbang<\/strong>, bekerja dan beristirahat. Bekerjalah dengan sukacita dan gairah, dan beristirahatlah dengan rasa bebas dan selaras dengan dirimu sendiri.","Atas nama ‘Dewa Uang’, <strong>menghormati orang tuamu<\/strong>. Menghormati ayah dan ibumu memberimu rasa aman dan keterikatan, agar kamu panjang umur dalam komunitas tempat orang saling memberi dan menolong.","Atas nama ‘Dewa Uang’, <strong>tidak membunuh<\/strong>, baik atas namamu sendiri maupun atas nama orang lain. Namun sejarah menunjukkan bahwa perintah yang sangat penting ini telah berulang kali diabaikan: oleh para penguasa dan rezim, oleh gereja-gereja secara diam-diam, melalui penyiksaan dan perang yang tak berkesudahan, atas nama kekuasaan, keserakahan, dan minyak. Daftar yang tak ada habisnya.","Atas nama ‘Dewa Uang’, <strong>tidak berzina<\/strong>, yang lebih merujuk pada nilai kehormatan, kesetiaan, kepercayaan, kebenaran, dan rasa memiliki.","Atas nama ‘Dewa Uang’, <strong>tidak mencuri<\/strong>. Sayangnya, ini telah menjadi kejadian sehari-hari di zaman modern kita, baik dalam kehidupan sehari-hari maupun di kalangan atas politik dan bisnis. Setiap detik, triliunan diputar, ditukar, dan dijual dengan untung di bumi ini, dengan kerugian bagi orang lain: bentuk pencurian baru yang kini dianggap dapat diterima secara moral.","Atas nama ‘Dewa Uang’, <strong>tidak berkata dusta terhadap sesamamu<\/strong> atau bahkan berbohong. Kebenaran adalah senjata paling tajam dalam melawan segalanya, dan memberimu kekuatan untuk menjalani hidupmu.","Atas nama ‘Dewa Uang’, <strong>tidak mengingini rumah sesamamu<\/strong>, maupun istrinya. Rasa cukup adalah rumah kebahagiaan.",null,"“Manusia menolong manusia, karena kita adalah manusia, bukan?”","Tidak ada tanda terima donasi dan tidak ada pengawasan. Semuanya berdasarkan kepercayaan.","<strong style=\"color:#f6e3c3\">Eberhard Teufel<\/strong> · Tuttlingen · Berlin · Konstanz · tinggal di Bali Utara, Indonesia","© 2026 · Manusia Menolong Manusia","Ketuk di mana saja untuk menutup","Buka menu","Foto anak-anak di Bali Utara","Anak-anak bersorak mengangkat tangan di sekitar seorang pria yang duduk, memegang minuman","Dua gadis tersenyum, salah satunya membuat tanda perdamaian","Dua gadis tertawa bersama di atas sebotol Coca-Cola","Dua gadis tertawa karena sebotol Coca-Cola","Seorang gadis dengan handuk merah muda di kepalanya tersenyum malu-malu","Tiga anak laki-laki berpose jenaka di belakang seorang pria yang berswafoto","Tiga anak kecil melukis dengan tangan dan kuas di atas papan merah besar di luar ruangan","Sebuah rumah sedang diperbaiki di bawah pohon besar","Seekor anak anjing gembala Jerman memegang papan bertuliskan umurnya 10 minggu dan hari ini ulang tahunnya","Eberhard Teufel tersenyum","Tiga anak laki-laki berpose jenaka di belakang seorang pria yang berswafoto di bawah pohon","Seekor kucing oranye berjalan di jalan yang sepi di Bali Utara","Daun hijau berbentuk hati di batang pohon","Pohon tua yang tinggi di atas tembok pura","Puncak putih di atas latar merah muda","Bunga matahari merah dan emas","Bunga putih di latar biru dan emas","Dua jalan setapak di atas latar kuning-hijau","Pusaran warna pelangi","Komposisi abstrak berwarna oranye dan cokelat","Bunga oranye","Bunga oranye, detail","Gambar dengan lengkung hitam di atas warna kuning, 02/2026","Teratai di bawah piramida emas, gambar 02/2026","Lengkung dan tetesan emas di atas papan merah tua","Penampil gambar","Tersalin","Tutup menu","Harap masukkan nama Anda dan alamat email yang valid.","Terima kasih, {name}. Pendaftaran Anda sudah siap. Salin teks di bawah dan kirimkan kepada Eberhard melalui kontak yang ia berikan kepada Anda.","Salin pendaftaran","Pendaftaran bergabung dengan Manusia Menolong Manusia","Nama","Minat"]};
+  var DYN={"0":"People Help People","59":"Copy","166":"Copied","138":"Open menu","167":"Close menu","168":"Please enter your name and a valid email address.","169":"Thank you, {name}. Your application is ready. Copy the text below and send it to Eberhard using the contact details he gave you.","170":"Copy application","171":"Application to join People Help People","172":"Name","87":"Email","88":"Country","173":"Interest","94":"Message"};
+  var lang='en';
+  function tr(i){var v=(lang==='en')?null:DICT[lang][i];return v!=null?v:DYN[i]}
+  function apply(l){
+    lang=l;document.documentElement.lang=l;
+    document.querySelectorAll('[data-t]').forEach(function(el){
+      if(el._en===undefined)el._en=el.innerHTML;
+      var v=(l==='en')?null:DICT[l][+el.getAttribute('data-t')];
+      el.innerHTML=(v!=null)?v:el._en;
+    });
+    ['alt','placeholder','aria-label'].forEach(function(a){
+      document.querySelectorAll('[data-ta-'+a+']').forEach(function(el){
+        var k='_en_'+a;if(el[k]===undefined)el[k]=el.getAttribute(a);
+        var v=(l==='en')?null:DICT[l][+el.getAttribute('data-ta-'+a)];
+        el.setAttribute(a,v!=null?v:el[k]);
+      });
+    });
+    document.title=tr(0);
+    document.querySelectorAll('.lang button').forEach(function(b){var on=b.getAttribute('data-lang')===l;b.setAttribute('aria-pressed',on?'true':'false');b.classList.toggle('on',on)});
+    if(typeof mb!=='undefined'&&mb&&mp)mb.setAttribute('aria-label',tr(mp.hidden?138:167));
+    try{localStorage.setItem('phplang',l)}catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-lang'));if(b.closest('#menuPanel'))setMenu(false)})});
+  function pick(){
+    var s=null;try{s=localStorage.getItem('phplang')}catch(e){}
+    if(s==='en'||s==='de'||s==='id')return s;
+    var ls=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||'en'];
+    for(var i=0;i<ls.length;i++){var c=String(ls[i]).toLowerCase().slice(0,2);if(c==='de')return 'de';if(c==='id'||c==='in')return 'id';if(c==='en')return 'en'}
+    return 'en';
+  }
+  var lb=document.getElementById('lb'),li=lb.querySelector('img'),lc=lb.querySelector('p');
+  document.querySelectorAll('.gallery figure').forEach(function(f){
+    var i=f.querySelector('img'),c=f.querySelector('figcaption');
+    f.querySelector('button').addEventListener('click',function(){li.src=i.src;li.alt=i.alt;lc.textContent=c?c.textContent:'';lb.classList.add('on')});
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('on')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+
+  var v=document.getElementById('intro'),src=document.getElementById('introsrc'),ph=document.getElementById('vph');
+  function noVideo(){v.hidden=true;ph.hidden=false}
+  src.addEventListener('error',noVideo);v.addEventListener('error',noVideo);
+
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-copy'),done=function(){b.textContent=tr(166);setTimeout(function(){b.textContent=tr(59)},1800)};
+      var sel=function(){var d=b.parentNode.querySelector('dd'),r=document.createRange();r.selectNodeContents(d);var s=window.getSelection();s.removeAllRanges();s.addRange(r)};
+      try{navigator.clipboard.writeText(t).then(done,sel)}catch(x){sel()}
+    });
+  });
+
+  var fl=document.getElementById('floatGive'),vis={cta:true,give:false};
+  function upd(){fl.classList.toggle('off',vis.cta||vis.give)}
+  if('IntersectionObserver' in window){
+    var io=function(key){return new IntersectionObserver(function(es){es.forEach(function(e){vis[key]=e.isIntersecting});upd()},{threshold:.1})};
+    io('cta').observe(document.querySelector('.hero .cta'));
+    io('give').observe(document.getElementById('give'));
+  }
+
+  var mb=document.getElementById('menuBtn'),mp=document.getElementById('menuPanel');
+  function setMenu(o){mp.hidden=!o;mb.setAttribute('aria-expanded',o?'true':'false');mb.setAttribute('aria-label',tr(o?167:138))}
+  mb.addEventListener('click',function(){setMenu(mp.hidden)});
+  mp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  window.addEventListener('resize',function(){if(window.innerWidth>1040)setMenu(false)});
+
+  var form=document.getElementById('applyForm'),st=document.getElementById('fStatus');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d={name:form.name.value.trim(),email:form.email.value.trim(),country:form.country.value.trim(),role:form.role.options[form.role.selectedIndex].textContent,message:form.message.value.trim()};
+    if(!d.name||!/^\S+@\S+\.\S+$/.test(d.email)){st.textContent=tr(168);return}
+    var text=tr(171)+'\n'+tr(172)+': '+d.name+'\n'+tr(87)+': '+d.email+'\n'+tr(88)+': '+d.country+'\n'+tr(173)+': '+d.role+'\n'+tr(94)+': '+d.message;
+    st.textContent=tr(169).replace('{name}',d.name);
+    var ta=document.createElement('textarea');ta.readOnly=true;ta.value=text;st.appendChild(ta);
+    var cp=document.createElement('button');cp.type='button';cp.className='btn sm';cp.textContent=tr(170);
+    cp.addEventListener('click',function(){
+      try{navigator.clipboard.writeText(text).then(function(){cp.textContent=tr(166)},function(){ta.focus();ta.select()})}catch(x){ta.focus();ta.select()}
+    });
+    st.appendChild(cp);
+  });
+  apply(pick());
+})();
+</script>
+
+</body></html>
